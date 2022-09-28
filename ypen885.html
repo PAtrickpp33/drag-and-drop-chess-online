@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Webpage Name -->
+    <title>
+        The Game Academy
+    </title>
+
+    <!-- Responsive Web Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/jpg" href="https://cws.auckland.ac.nz/gas/api/FavIcon" />
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="ypen885.css">
+
+    <!-- Javascript -->
+    <script src="ypen885.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a class="logo">
+            <img src="https://cws.auckland.ac.nz/gas/api/Logo" alt="game"width=400 height=400>
+        </a>
+        <ul class="nav-links">
+            <li>
+                <p id="showID">Not Logged In</p>
+                <button id="logout" onclick="logOut()">Log Out</button>
+            </li>
+            <li class="nav-item"><a href="javascript:void(0)" onclick=HomeDIVToggle()>🏠 Home</a></li>
+            <li class="nav-item"><a href="javascript:void(0)" onclick=InstituteShopDIVToggle()>🛒 Academy Shop</a></li>
+            <li class="nav-item"><a href="javascript:void(0)" onclick=LoginDIVToggle()>👩 User Login</a></li>
+            <li class="nav-item"><a href="javascript:void(0)" onclick=UserRegistrationDIVToggle()>👩 User
+                    Registration</a></li>
+            <li class="nav-item"><a href="javascript:void(0)" onclick=ChessDIVToggle()>♚ Game of Chess</a>
+            </li>
+            <li class="nav-item"><a href="javascript:void(0)" onclick=GuestBookDIVToggle()>📖 Guest Book</a>
+            </li>
+            
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <div id="HomeDIV">
+        <div class="paragraph">
+            <h1 style="color:black; padding-top:15px; text-align: center; ">
+                
+            </h1>
+            <br>
+            <hr noshade
+                style="background-color:black; width:50%; border-width: 2px; margin-left: 25% !important; margin-right:25% !important;">
+            <br>
+            <b>
+                This section is the landing place containing an introduction to the academy.
+            </b>
+            <p>
+                The rules of chess (also known as the laws of chess) govern the play of the game of chess. Chess is a two-player abstract strategy board game. Each player controls sixteen pieces of six types on a chessboard. Each type of piece moves in a distinct way. The object of the game is to checkmate (inescapably threaten with capture) the opponent's king. A game can end in various ways besides checkmate: a player can resign, and there are several ways in which a game can end in a draw.
+
+While the exact origins of chess are unclear, modern rules first took form during the Middle Ages. The rules continued to be slightly modified until the early 19th century, when they reached essentially their current form. The rules also varied somewhat from place to place. Today, the standard rules are set by FIDE (Fédération Internationale des Échecs), the international governing body for chess. Slight modifications are made by some national organizations for their own purposes. There are variations of the rules for fast chess, correspondence chess, online chess, and Chess960.
+
+Besides the basic moves of the pieces, rules also govern the equipment used, time control, conduct and ethics of players, accommodations for physically challenged players, and recording of moves using chess notation. Procedures for resolving irregularities that can occur during a game are provided as well.
+            </p>
+            <br>
+            <blockquote
+                style="border: 2px solid #666; padding: 15px; background-color: #ccc; margin-left: 5%; margin-right: 5%;">
+                <ul style="padding-left: 2%; text-align: left;">
+                    <li>
+                        The king moves exactly one square horizontally, vertically, or diagonally. A special move with the king known as castling is allowed only once per player, per game (see below).
+                    </li>
+                    <li>A rook moves any number of vacant squares horizontally or vertically. It also is moved when castling.</li>
+                    <li>A bishop moves any number of vacant squares diagonally.
+                    </li>
+                    <li>The queen moves any number of vacant squares horizontally, vertically, or diagonally.</li>
+                    <li>A knight moves to one of the nearest squares not on the same rank, file, or diagonal.</li>
+                    <li>Pawns have the most complex rules of movement:
+                        <ul>
+                            <li>A pawn moves straight forward one square, if that square is vacant. If it has not yet moved, a pawn also has the option of moving two squares straight forward, provided both squares are vacant. Pawns cannot move backwards.</li>
+                            <li>A pawn, unlike other pieces, captures differently from how it moves. A pawn can capture an enemy piece on either of the two squares diagonally in front of the pawn. It cannot move to those squares when vacant except when capturing en passant.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </blockquote>
+            <br><br>
+            <div class="center">
+                <img src="https://images.unsplash.com/flagged/photo-1570551502611-c590dc45f644?ixlib=rb-1.2.1&dl=carlos-esteves-G8wvNzm_fK0-unsplash.jpg&w=640&q=80&fm=jpg&crop=entropy&cs=tinysrgb"
+                    alt="chess game">
+            </div>
+        </div>
+    </div>
+
+   
+
+    <!-- Institute Shop Section -->
+    <div id="InstituteShopDIV">
+        <div class="paragraph">
+            <h1 style="color:black; padding-top:15px; text-align: center;">
+                The Game Academy Products
+            </h1>
+            <br>
+            <hr noshade
+                style="background-color:black; width:50%; border-width: 2px; margin-left: 25% !important; margin-right:25% !important;">
+            <br>
+        </div>
+
+        <input type="text" id="productSearchBar" onkeyup="productSearch()" placeholder="Search for products">
+
+        <ul id="productsUList">
+        </ul>
+
+    </div>
+
+    <!-- User Registration Section -->
+    <div id="UserRegistrationDIV">
+        <div class="paragraph">
+            <h1 style="color:black; padding-top:15px; text-align: center;">
+                Register
+            </h1>
+            <br>
+            <hr noshade
+                style="background-color:black; width:50%; border-width: 2px; margin-left: 25% !important; margin-right:25% !important;">
+        </div>
+        <br>
+
+        <div>
+            Username
+            <br>
+            <input type="text" id="registerUsername">
+            <br><br>
+            Password
+            <br>
+            <input type="password" id="registerPassword">
+            <br><br>
+            Address
+            <br>
+            <input type="email" id="registerAddress">
+            <br><br>
+            <button type="submit" onclick="registerUser()">Confirm</button>
+            <br>
+        </div>
+    </div>
+
+    <!-- Guest Book Section -->
+    <div id="GuestBookDIV">
+        <div class="paragraph">
+            <h1 style="color:black; padding-top:15px; text-align: center;">
+                Guest Book
+            </h1>
+            <br>
+            <hr noshade
+                style="background-color:black; width:50%; border-width: 2px; margin-left: 25% !important; margin-right:25% !important;">
+            <br>
+        </div>
+
+        <div>
+            Name
+            <br>
+            <input type="text" id="commentName">
+            <br><br> Comment<br>
+            <textarea id="postedComment" rows="4" cols="50"></textarea>
+            <br>
+            <button type="submit" onclick="postComment()">Submit</button>
+            <br>
+        </div>
+        <br>
+        <div class="centered">
+            <h3>
+                Recent Entries (scroll down)
+            </h3>
+            <iframe src="https://cws.auckland.ac.nz/gas/api/Comments" title="Recent Entries" id="commentsiFrame"
+                height="400px" width="800px"></iframe>
+        </div>
+    </div>
+
+    <!-- Login Section (not able to be seen unless user is not signed in) -->
+    <div id="LoginDIV">
+        <div class="paragraph">
+            <h1 style="color:black; padding-top:15px; text-align: center;">
+                Login
+            </h1>
+            <br>
+            <hr noshade
+                style="background-color:black; width:50%; border-width: 2px; margin-left: 25% !important; margin-right:25% !important;">
+        </div>
+        <br>
+
+        <div>
+            Username
+            <br>
+            <input type="text" id="loginUsername">
+            <br><br>
+            Password
+            <br>
+            <input type="password" id="loginPassword">
+            <br><br>
+            <button type="submit" onclick="login()">Confirm</button>
+            <br>
+        </div>
+    </div>
+    <!-- chess game Section -->
+    <div id="ChessDIV">
+        <table id="board">
+          <tr>
+            <td colspan="10" id="bin" class="bin" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+          </tr>
+          <tr>
+              <td colspan="10">
+                <div class="wgrave" id="wgrave">
+                  <div id="piece33" class="wp Qw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+                <div id="piece34" class="wp Qw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+                <div id="piece35" class="wp Qw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+                <div id="piece36" class="wp Qw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="ls">&nbsp;</td>
+              <td class="ls">a</td>
+              <td class="ls">b</td>
+              <td class="ls">c</td>
+              <td class="ls">d</td>
+              <td class="ls">e</td>
+              <td class="ls">f</td>
+              <td class="ls">g</td>
+              <td class="ls">h</td>
+              <td class="ls">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="ls">8</td>
+              <td id="a8" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece1" class="wp Rw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="b8" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece2" class="wp Nw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="c8" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece3" class="wp Bw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="d8" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece4" class="wp Kw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="e8" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece5" class="wp Qw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="f8" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece6" class="wp Bw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="g8" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece7" class="wp Nw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="h8" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece8" class="wp Rw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td class="ls">8</td>
+            </tr>
+            <tr>
+              <td class="ls">7</td>
+              <td id="a7" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece9" class="wp Pw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="b7" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece10" class="wp Pw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="c7" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece11" class="wp Pw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="d7" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece12" class="wp Pw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="e7" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece13" class="wp Pw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="f7" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece14" class="wp Pw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="g7" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece15" class="wp Pw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="h7" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece16" class="wp Pw" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td class="ls">7</td>
+            </tr>
+            <tr>
+              <td class="ls">6</td>
+              <td id="a6" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="b6" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="c6" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="d6" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="e6" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="f6" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="g6" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="h7" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td class="ls">6</td>
+            </tr>
+            <tr>
+              <td class="ls">5</td>
+              <td id="a5" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="b5" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="c5" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="d5" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="e5" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="f5" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="g5" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="h5" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td class="ls">5</td>
+            </tr>
+            <tr>
+              <td class="ls">4</td>
+              <td id="a4" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="b4" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="c4" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="d4" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="e4" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="f4" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="g4" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="h4" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td class="ls">4</td>
+            </tr>
+            <tr>
+              <td class="ls">3</td>
+              <td id="a3" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="b3" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="c3" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="d3" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="e3" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="f3" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="g3" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td id="h3" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+              <td class="ls">3</td>
+            </tr>
+            <tr>
+              <td class="ls">2</td>
+              <td id="a2" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece25" class="bp Pb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="b2" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece26" class="bp Pb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="c2" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece27" class="bp Pb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="d2" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece28" class="bp Pb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="e2" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece29" class="bp Pb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="f2" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece30" class="bp Pb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="g2" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece31" class="bp Pb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="h2" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece32" class="bp Pb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td class="ls">2</td>
+            </tr>
+            <tr>
+              <td class="ls">1</td>
+              <td id="a1" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece17" class="bp Rb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="b1" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece18" class="bp Nb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="c1" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece19" class="bp Bb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="d1" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece20" class="bp Kb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="e1" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece21" class="bp Qb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="f1" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece22" class="bp Bb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="g1" class="bs" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece23" class="bp Nb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td id="h1" class="ws" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="piece24" class="bp Rb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+              </td>
+              <td class="ls">1</td>
+            </tr>
+            <tr>
+              <td class="ls">&nbsp;</td>
+              <td class="ls">a</td>
+              <td class="ls">b</td>
+              <td class="ls">c</td>
+              <td class="ls">d</td>
+              <td class="ls">e</td>
+              <td class="ls">f</td>
+              <td class="ls">g</td>
+              <td class="ls">h</td>
+              <td class="ls">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="10">
+                <div class="bgrave" id="bgrave">
+                  <div id="piece37" class="bp Qb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+                <div id="piece38" class="bp Qb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+                <div id="piece39" class="bp Qb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+                <div id="piece40" class="bp Qb" draggable="true" ondragstart="drag(event)">&nbsp</div>
+                </div>
+              </td>
+            </tr>
+            
+          </table>
+          <button type ="submit" onclick="pairMe(event)">pairMe</button>
+          <button type="submit" onclick="postMove(event)">PostMove</button>
+          <button type="submit" onclick="GetMove(event)">GetMove</button>
+          <button type="submit" onclick="Quitgame(event)">Quitgame</button>
+    </div>
+
+</body>
+
+</html>
