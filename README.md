@@ -1,9 +1,9 @@
 # drag-and-drop-chess-online
 
-
+URL:https://patrickpp33.github.io/drag-and-drop-chess-online/
 Backend is assignment 2 which is by .NET6
 
-
+ 
 Background
 Logo
 The Game Academy is a premiere establishment providing world-class game resources. They take pride in their partnership with local board gamers. The academy's web portal uses a service-oriented architecture with a UI front-end, and a service back-end. The previous assignments asked you to help constructing the service back-end, and this assignment is the start of your journey helping to construct the front-end.
